@@ -54,6 +54,19 @@ class Quotes:
     def get_quote(self):
         return self.quote
 
+    def delete_quote(self, quote):
+        self.quotes[self.language].remove(quote)
+        return self.quotes[self.language]
+
+    def delete_all_quotes(self):
+        self.quotes[self.language] = []
+        return self.quotes[self.language]
+
+    def get_quote_index(self, quote):
+        return self.quotes[self.language].index(quote)
+
+    def get_quote_by_index(self, index):
+        return self.quotes[self.language][index]
 
 if __name__ == "__main__":
     quotes = Quotes("en")
